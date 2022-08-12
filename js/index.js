@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 console.log(usrnm);
 
      if (usrnm === null){
-       //window.location.replace("login.html");
+       window.location.replace("login.html");
      }
 
 })
