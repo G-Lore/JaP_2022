@@ -192,6 +192,10 @@ section {
     margin-top: 0.5em;
 }
 
+.login_cuadro .inputBox button:hover {
+    background: #fcef75;
+}
+
 .ecommerce {
     margin-top: 5px;
     color: #70d4e4;
@@ -241,4 +245,15 @@ section {
 .footerlogin p {
     color: #259647;
     font-size: large;
+}
+
+.login_cuadro .inputBox .error {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    border-right: 1px solid rgba(255, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 0, 0, 0.5);
 }
