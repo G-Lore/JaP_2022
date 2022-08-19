@@ -13,6 +13,7 @@ body {
     background-size: cover;
 }
 
+
 section {
     display: flex;
     justify-content: center;
@@ -112,8 +113,8 @@ section {
 
 .login_container {
     position: relative;
-    width: 435px;
-    min-height: 430px;
+    width: 26.1em;
+    min-height: 25.8em;
     background: #fcee7586;
     border-radius: 10px;
     display: flex;
@@ -126,6 +127,47 @@ section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+@media screen and (width: 390px) {
+    body {
+        background: url(../img/imagen_para_loging\ 390\ x\ 844\ px.png);
+        background-size:cover;
+    }
+    .login_container {
+        min-height: 20.8em;
+        margin: 1em 2em;
+    }
+    .box .square:nth-child(1) {
+        top: -285px;
+        right: -380px;
+        width: 80px;
+        height: 80px;
+    }
+    .box .square:nth-child(2) {
+        top: -60px;
+        right: -60px;
+        width: 70px;
+        height: 70px;
+    }
+    .box .square:nth-child(3) {
+        bottom: -60px;
+        right: -390px;
+        width: 70px;
+        height: 70px;
+    }
+    .box .square:nth-child(4) {
+        bottom: -330px;
+        width: 80px;
+        height: 80px;
+    }
+    .box .square:nth-child(5) {
+        top: -340px;
+        width: 80px;
+        height: 80px;
+    }
+   
+  }
+  
+  
 .login_cuadro {
     position: relative;
     width: 100%;
