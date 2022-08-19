@@ -205,6 +205,45 @@ section {
     }
    
   }
+  @media screen and (width: 412px) {
+    body {
+        background: url(../img/imagen_para_loging\ 390\ x\ 844\ px.png);
+        background-size:cover;
+    }
+    .login_container {
+        min-height: 20.8em;
+        margin: 1em 2em;
+    }
+    .box .square:nth-child(1) {
+        top: -285px;
+        right: -380px;
+        width: 80px;
+        height: 80px;
+    }
+    .box .square:nth-child(2) {
+        top: -60px;
+        right: -60px;
+        width: 70px;
+        height: 70px;
+    }
+    .box .square:nth-child(3) {
+        bottom: -60px;
+        right: -390px;
+        width: 70px;
+        height: 70px;
+    }
+    .box .square:nth-child(4) {
+        bottom: -330px;
+        width: 80px;
+        height: 80px;
+    }
+    .box .square:nth-child(5) {
+        top: -340px;
+        width: 80px;
+        height: 80px;
+    }
+   
+  }
   
   
 .login_cuadro {
