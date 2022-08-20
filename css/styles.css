@@ -30,14 +30,12 @@ nav a {
 @media screen and (max-device-width: 420px) {
   body .jumbotron {
       background: url('../img/cover_back\ 420\ px.png');
-      background-size: cover;
       height: 30vh;
   }
 }
 @media screen and (max-device-width: 390px) {
   body .jumbotron {
       background: url('../img/cover_back\ 390\ px.png');
-      background-size: cover;
       height: 30vh;
   }
 }
