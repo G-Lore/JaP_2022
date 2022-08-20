@@ -16,8 +16,6 @@ function login (){
             showConfirmButton: true,
             confirmButtonColor: '#8dcb00',
             backdrop: ` rgba(255,145,0,0.4)`,
-            
-            timer: 5000,
           })
     }else {
         localStorage.setItem('user', usuario);

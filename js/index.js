@@ -24,3 +24,14 @@ console.log(usrnm);
      }
 
 })
+
+document.getElementById("cerrar_sesion").addEventListener("click", cerrar);
+
+function cerrar() {
+   localStorage.removeItem('user');
+   window.location.replace("login.html");
+
+  }
+
+  
+    
