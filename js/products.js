@@ -22,7 +22,7 @@ function showProductsList( array ){
                         <h4>`+ prodList.name +`</h4> 
                         <p> `+ prodList.description +`</p> 
                         </div>
-                        <small class="text-muted">` + prodList.soldCount + ` artículos</small> 
+                        <small class="text-muted">` + prodList.soldCount + ` vendidos</small> 
                     </div>
 
                 </div>
@@ -42,7 +42,7 @@ EJECUCIÓN:
 
 */
 
-document.addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("DOMContentLoaded", function(){
     getJSONData(LIST_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
