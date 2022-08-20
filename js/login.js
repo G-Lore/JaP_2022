@@ -8,7 +8,17 @@ function login (){
     if (usuario==="" || clave===""){
         document.getElementById('user_email').classList.add('error');
         document.getElementById('clave').classList.add('error');
-        alert ("Debe ingresar email y contraseña");
+        Swal.fire({
+            position: 'center',
+            color: '#ffa533',
+            imageUrl: 'https://www.smileysapp.com/gif-emoji/dont-know.gif',
+            title: 'Oops! algo anduvo mal, por favor intenta ingrsar tus datos nuevamente.',
+            showConfirmButton: true,
+            confirmButtonColor: '#8dcb00',
+            backdrop: ` rgba(255,145,0,0.4)`,
+            
+            timer: 5000,
+          })
     }else {
         localStorage.setItem('user', usuario);
         location.href='index.html';
