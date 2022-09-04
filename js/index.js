@@ -30,8 +30,15 @@ document.getElementById("cerrar_sesion").addEventListener("click", cerrar);
 function cerrar() {
    localStorage.removeItem('user');
    window.location.replace("login.html");
-
   }
 
+
+document.addEventListener('DOMContentLoaded', ()=> {
+
+    let nombre_usuario = localStorage.getItem('user');
+
+    document.getElementById('person').innerHTML = nombre_usuario;
+
+})
   
     
