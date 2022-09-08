@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.products_container {
+    position: relative;
+    width: 100em;
+    min-height: 80vh;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 2.5%;
+    background: #c7c7c756;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.styletitle {
+    background: #8181811f;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.329);
+    border-right: 1px solid rgba(255, 255, 255, 0.096);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-right: -2%;
+    margin-left: 48em;
+    margin-top: -1em;
+}
+
+.styletitle h1 {
+    margin-left: 1em;
+    color: #2e9aaacc;
+    font-family: 'Poppins' , sans-serif;
+}
+
+.styledescription {
+    width: 23em;
+    padding-bottom: 8em;
+    background: #8181811f;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.329);
+    border-right: 1px solid rgba(255, 255, 255, 0.096);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-right: -10%;
+    margin-left: 52%;
+    margin-top: 2%;
+
+    
+}
+
+.styledescription h3 {
+    margin-left: 4em;
+    margin-right: 4em;
+    color: #2e9aaacc;
+    margin-top: 2em;
+    font-family: 'Poppins' , sans-serif;
+}
+
+.styledescription p {
+    margin-left: 6em;
+    margin-right: 6em;
+    font-size: large;
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins' , sans-serif;
+    margin: 10%;
+    
+    
+}
+
+.styledescription h4 {
+    font-size: large;
+    color: #777;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
+    font-family: 'Poppins' , sans-serif;
+}
+
+.imagenes {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    margin-top: -29em;
+    margin-left: -45%;
+    
+}
+
+.contImg {
+    position: relative;
+    width: 25em;
+    height: 25em;
+    
+   
+}
+.imagenes .seleccionImg {
+    position: absolute;
+    margin-left: -16em;
+    top: 17.5em;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.imagenes .seleccionImg li {
+    width: 10.25em;
+    height: 6.25em;
+    margin: 0.625em 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.692);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.025);
+    border-top: 1px solid rgba(255, 255, 255, 0.747);
+    border-left: 1px solid rgba(255, 255, 255, 0.747);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.imagenes .seleccionImg li img {
+    width: 80%;
+    transition: 0.5s;
+}
+
+.imagenes .seleccionImg li:hover img {
+    transform: translate(40%);
+}
+
+.contImg .imgBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 31.875em;
+    height: 35em;
+    background: #ff0;
+    background: rgba(255, 255, 255, 0.692);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.025);
+    border-top: 1px solid rgba(255, 255, 255, 0.747);
+    border-left: 1px solid rgba(255, 255, 255, 0.747);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    padding: 60px 20px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contImg .imgBox img {
+    width: 90%;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+.contImg .imgBox img:hover {
+    transform: scale(2.25) translate(38%);
+    
+}
+
+.contImg .imgBox h1 {
+    color: #777;
+    font-family: 'Poppins' , sans-serif;
+    padding-top: 1em;
+}
+
+.contImg .imgBox a {
+    color: black;
+    position: absolute;
+    margin-top: 34em;    
+    background: #fcee7586;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.329);
+    border-right: 1px solid rgba(255, 255, 255, 0.096);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1em;
+    color: #259647;
+    font-family: 'Poppins' , sans-serif;
+    text-decoration: none;
+    font-size: 16.5px;
+    transition: 0.5;
+    
+}
+
+.contImg .imgBox a:hover {
+    transform: scale(1.25);
+}
+
+.contImg .imgBox p {
+    position: absolute;
+    margin-top: -12em;
+    color: #70d4e4;
+    font-size: 36.5px;
+    text-align: center;
+    font-family: 'Poppins' , sans-serif;
+    font-weight: bold;
+}
+
+.contImg .imgBox span {
+    color: #78d594;
+}

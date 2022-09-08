@@ -214,20 +214,12 @@ a.custom-card:hover {
   text-transform: uppercase;
   padding-top: 4%;
   color: #fff;
-  text-shadow: 0 0 5px #259647,
-  0 0 10px #259647,
-  0 0 20px #259647,
-  0 0 40px #259647,
-  0 0 80px #259647;
+
 }
 
 .cerrar {
   margin-top: 4%;
-  border: none;
-  border-radius: 15px;
-  padding: 0.3rem;
-  background: linear-gradient(to right, #ff050596, #ffb2b28a);
-  color: rgb(255, 255, 255);
+
 }
 
 .cerrar:hover {
