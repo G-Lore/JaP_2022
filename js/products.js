@@ -16,21 +16,21 @@ function sortProducts(criteria, array){
     
     let result = [];
     if (criteria === ORDER_ASC_BY_PRICE)
-//Se define el criterio de orden ascendente a descendente de los costos de los producto
+    //Se define el criterio de orden ascendente a descendente de los costos de los producto
     {
         result = array.sort(function(a, b) {
             if ( a.cost < b.cost ){ return -1; }
             if ( a.cost > b.cost ){ return 1; }
             return 0;
         });
-//Se define el criterio de orden descendente a ascendente de los costos de los producto
+    //Se define el criterio de orden descendente a ascendente de los costos de los producto
     }else if (criteria === ORDER_DESC_BY_PRICE){
         result = array.sort(function(a, b) {
             if ( a.cost > b.cost ){ return -1; }
             if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
-//Se define el criterio de ordenamiento segun la cantidad de artículos vendidos
+    //Se define el criterio de ordenamiento segun la cantidad de artículos vendidos
     }else if (criteria === ORDER_BY_PROD_COUNT){
         result = array.sort(function(a, b) {
             let aCount = parseInt(a.soldCount);
