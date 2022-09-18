@@ -43,8 +43,50 @@ document.addEventListener("DOMContentLoaded", function (e) {
 //Se concatena a la URL la key id de cada producto que se encuantra guardada en sus respectivos almacenamiento local. 
 //Se utiliza la URL guardada en el init.js PRODUCT_INFO_COMMENTS_URL para acceder a JSON de los comentarios
 const PRODUCTS_COMENTS = PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("id") + EXT_TYPE;
+//Criterios de oredenación de las calificaciones 
+const ORDER_ASC_BY_STARS = "AZ";
+const ORDER_DESC_BY_STARS = "ZA";
+
+let currentSortCriteria = undefined;
 
 let currentCommentsArray = [];
+
+function sortComments(criteria, array){
+    
+  let result = [];
+  if (criteria === ORDER_ASC_BY_STARS)
+  //Se define el criterio de orden ascendente a descendente de la calificación del producto
+  {
+      result = array.sort(function(a, b) {
+          if ( a.score > b.score ){ return -1; }
+          if ( a.score < b.score ){ return 1; }
+          return 0;
+      });
+  //Se define el criterio de orden descendente a ascendente de los calificación del producto
+  }else if (criteria === ORDER_DESC_BY_STARS){
+      result = array.sort(function(a, b) {
+          if ( a.score < b.score ){ return -1; }
+          if ( a.score > b.score ){ return 1; }
+          return 0;
+      });
+  }
+
+  return result;
+} 
+
+function sortAndShowComments(sortCriteria, CommentsArray){
+  currentSortCriteria = sortCriteria;
+
+  if(CommentsArray != undefined){
+    currentCommentsArray = CommentsArray;
+  }
+
+  currentCommentsArray = sortComments(currentSortCriteria, currentCommentsArray);
+
+  //Muestro los comentarios con las calificaciones ordenadas
+  showComments(currentCommentsArray);
+}
+
 
 //función para mostrar comentarios
     function showComments() {
@@ -94,6 +136,7 @@ let currentCommentsArray = [];
 
         let commentario_ingresado = document.getElementById('escribe_un_comentario').value;
         //console.log(commentario_ingresado);
+        
 
         const fyh = new Date();
         let anio = fyh.getFullYear();
@@ -146,6 +189,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         }
     });
+
+    document.getElementById("sortAsc").addEventListener("click", function(){
+      sortAndShowComments(ORDER_ASC_BY_STARS);
+  });
+
+    document.getElementById("sortDesc").addEventListener("click", function(){
+      sortAndShowComments(ORDER_DESC_BY_STARS);
+  });
 
 });
 
