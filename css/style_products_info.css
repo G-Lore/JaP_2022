@@ -153,6 +153,10 @@
 
 }
 
+.contImg .imgBox a span{
+    color: #fcee7586;
+}
+
 .contImg .imgBox a:hover {
     transform: scale(1.25);
 }

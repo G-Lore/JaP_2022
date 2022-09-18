@@ -212,17 +212,70 @@ a.custom-card:hover {
 
   font-size: 1.2em;
   text-transform: uppercase;
-  padding-top: 4%;
-  color: #fff;
-
+  margin-top: 5%;
+  color:#ffffff;
 }
 
-.cerrar {
-  margin-top: 4%;
 
+.cerrar {
+  margin-top: 3%;
+  background: none;
+  border-style: dashed;
+  border-width: 2.9px;
+  border-radius: 15px;
+  border-color: #7cedc7a4;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  color: #7cdeed;
+  font-weight: 200;
 }
 
 .cerrar:hover {
-  background: linear-gradient(to right, #ffc50596, #ec86008a);
+  color: #fcee7586;
+  border-color: #7cdeedc5;
 }
+
+.footer {
+  margin-left: 12.5rem;
+  margin-right: 12.5rem;
+
+}
+.volver_arriba {
+  float: inline-end;
+  background: linear-gradient(to right, #7cdeed96, #78d5948a);
+  color: #20a9be;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 140px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 2em;
+  text-decoration: none;
+}
+
+.volver_arriba:hover {
+  background: #fcef75;
+}
+
+.footer p {
+  color: #259647;
+  font-size: large;
+}
+
+@media screen and (max-device-width: 430px) {
+  .footer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
 
