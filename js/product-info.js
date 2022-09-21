@@ -4,6 +4,13 @@ const PRODUCTS_INFO = PRODUCT_INFO_URL + localStorage.getItem("id") + EXT_TYPE;
 //Array donde se guardaran los datos obtenidos del JSON de product-info
 let currentProductsInfoArray = [];
 
+
+function setProductID(id) {
+  localStorage.setItem("id", id);
+  window.location = "product-info.html"
+}
+
+
 //Función para mostrar la indormación de cada uno de los productos
 function mostrar() {
   document.getElementById(
@@ -18,11 +25,73 @@ function mostrar() {
   }
 
   document.getElementById("img").innerHTML = htmlContentToAppend;
-  document.getElementById("imgZoom").innerHTML = `<h2>e · <span>mercado</span></h2><img src= "${currentProductsInfoArray.images[0]}" class="zoomImage">
-    <h1>Precio: ${currentProductsInfoArray.cost} ${currentProductsInfoArray.currency}</h1> <h3>Descripción</h3> 
-    <p>${currentProductsInfoArray.description}</p> <h5>Categoría: ${currentProductsInfoArray.category}</h5> 
-    <h6>Cantidad vendidos: ${currentProductsInfoArray.soldCount}</h6> <a href=""><i class="fas fa-shopping-cart"></i><span>_</span>Añadir al carrito</a>`;
+  document.getElementById("imgZoom").innerHTML = `
+  <h2>e · <span>mercado</span></h2><img src= "${currentProductsInfoArray.images[0]}" class="zoomImage">
+    <table><tbody>
+      <tr><td class="description_title">Descripción</td></tr>
+      <tr><td class="description">${currentProductsInfoArray.description}</td></tr> 
+      <tr><td class="price">Precio: ${currentProductsInfoArray.cost} ${currentProductsInfoArray.currency}</td></tr>
+      <tr><td class="category_soldCount">Categoría: ${currentProductsInfoArray.category}</td><tr>
+      <tr><td class="category_soldCount">Cantidad vendidos: ${currentProductsInfoArray.soldCount}</td></tr>
+    </tbody></table> 
+  <a href=""><i class="fas fa-shopping-cart"></i><span>_</span>Añadir al carrito</a>`;
+  
+  let similaryProducts = "";
+
+
+  similaryProducts += `
+  
+  <div class="carousel-item active">
+    <a onclick="setProductID(${currentProductsInfoArray.relatedProducts[0].id})" class="cursor-active">
+    <img src="${currentProductsInfoArray.relatedProducts[0].image}"  class="d-block w-100" alt="";">
+    </a>
+    <a onclick="setProductID(${currentProductsInfoArray.relatedProducts[0].id})" class="cursor-active">
+    <h1>${currentProductsInfoArray.relatedProducts[0].name}</h1>
+    </a>
+  </div>
+
+ `
+
+  for (let index = 1; index < currentProductsInfoArray.relatedProducts.length; index++) {
+    
+    similaryProducts += `
+    <div class="carousel-item">
+    <a onclick="setProductID(${currentProductsInfoArray.relatedProducts[index].id})" class="cursor-active">
+      <img src="${currentProductsInfoArray.relatedProducts[index].image}"  class="d-block w-100" alt="";">
+      </a>
+      <a onclick="setProductID(${currentProductsInfoArray.relatedProducts[index].id})" class="cursor-active">
+      <h1>${currentProductsInfoArray.relatedProducts[index].name}</h1>
+      </a>
+    </div>
+    
+   `
+  }
+ 
+  document.getElementById("productos_relacionados").innerHTML =  `
+  <div id="myCarousel" class="carousel  carousel-dark slide" data-bs-ride="carousel" >
+    <div class="carousel-inner">
+      
+      
+        ${similaryProducts}
+      
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+  
+    </div>
+  </div>`;
+
+let myCarousel = document.querySelector('#myCarousel');
+let carousel = new bootstrap.Carousel(myCarousel);
+
 }
+
+
 
 //función con querySelector para seleccionar cada imágen y que según la imágen seleccionada aparezca en .zoomImage
 function changeImageSrc(any) {
@@ -96,7 +165,7 @@ function sortAndShowComments(sortCriteria, CommentsArray){
            for (let index = 0; index < currentCommentsArray.length; index++) {
             comentarios += 
 
-                `<li><h3><strong>${currentCommentsArray[index].user} -</strong> ${currentCommentsArray[index].dateTime} <span>${puntuacion(currentCommentsArray[index].score)}</span></h3> 
+                `<li><h3><strong>${currentCommentsArray[index].user} - </strong> ${currentCommentsArray[index].dateTime} <span>${puntuacion(currentCommentsArray[index].score)}</span></h3> 
                     <p>${currentCommentsArray[index].description}</p></li>`
            }
            
