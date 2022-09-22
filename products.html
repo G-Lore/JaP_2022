@@ -45,19 +45,19 @@
   </nav>
   <main role="main" class="pb-5">
     <div class="text-center p-4">
-      <h2>Productos</h2>
-      <h3 class="lead"> Encuentra aquí la mejor selección de <span class="fw-bolder" id="catname"></span></h3>
+      <h2 class="titles">Productos</h2>
+      <h3 class="subtitles"> Encuentra aquí la mejor selección de <span class="fw-bolder" id="catname"></span></h3>
     </div>
     <div class="container">
       <div class="row">
         <div class="col text-end">
           <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
             <input type="radio" class="btn-check" name="options" id="sortAsc">
-            <label class="btn btn-light" for="sortAsc"><i class="fas fa-sort-amount-up mr-1"></i>$</label>
+            <label class="sortbt cursor-active" for="sortAsc"><i class="fas fa-sort-amount-up mr-1"></i>$</label>
             <input type="radio" class="btn-check" name="options" id="sortDesc">
-            <label class="btn btn-light" for="sortDesc"><i class="fas fa-sort-amount-down mr-1"></i>$</label>
+            <label class="sortbt cursor-active" for="sortDesc"><i class="fas fa-sort-amount-down mr-1"></i>$</label>
             <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
-            <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i>Cant.</label>
+            <label class="sortbt cursor-active" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i>Rel.</label>
           </div>
         </div>
       </div>
@@ -66,25 +66,26 @@
         <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
           <div class="row container p-0 m-0">
             <div class="col">
-              <p class="font-weight-normal text-end my-2">Cant.</p>
+              <p class="cant">Cant.</p>
             </div>
             <div class="col">
-              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+              <input class="maxmin" type="number" placeholder="min." id="rangeFilterCountMin">
             </div>
             <div class="col">
-              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+              <input class="maxmin" type="number" placeholder="máx." id="rangeFilterCountMax">
             </div>
-            <div class="col-3 p-0">
+            <div class="col-4 p-0">
               <div class="btn-group" role="group">
-                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                <button class="filtrar" id="rangeFilterCount">Filtrar</button>
+                <button class="limpiar" id="clearRangeFilter">Limpiar</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     <div class="row">     
-            <div class="list-group" id="cat-list-container">
+            <div class="cont_listas" id="cat-list-container">
+              <ul></ul>
             </div>
         </div>
     </div>

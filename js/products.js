@@ -63,20 +63,17 @@ function showProductsList(currentProductsArray){
             
             htmlContentToAppend +=
             `
-            <div onclick="setProductID(${prodList.id})" class="list-group-item list-group-item-action cursor-active">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="${prodList.image}" alt="${prodList.description}" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${prodList.name} - ${prodList.cost} ${prodList.currency}</h4>
-                            <small class="text-muted">${prodList.soldCount} vendidos</small>
-                        </div>
-                        <p class="mb-1">${prodList.description}</p>
-                    </div>
-                </div>
-            </div>
+            <div onclick="setProductID(${prodList.id})" class=" cursor-active">
+                    <li class="listas">
+                        <small class="">${prodList.soldCount} vendidos</small>
+                        <table><tbody><tr>
+                        <tr>
+                        <td><img src="${prodList.image}" alt="${prodList.description}" class=""><td>
+                            <td class="nombre_productos">${prodList.name} - ${prodList.cost} ${prodList.currency} 
+                            <p>${prodList.description}</p></td>
+                         </tr>
+                        </tbody></table>
+                    </li>
             `
         }
 
