@@ -74,6 +74,7 @@ function showProductsList(currentProductsArray){
                          </tr>
                         </tbody></table>
                     </li>
+                </div>
             `
         }
 

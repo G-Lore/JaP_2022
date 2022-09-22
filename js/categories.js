@@ -50,7 +50,7 @@ function showCategoriesList(){
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
 
             htmlContentToAppend += `
-            <div onclick="setCatID((${category.id}))" class=" cursor-active">
+            <div onclick="setCatID(${category.id})" class=" cursor-active">
                     <li class="listas">
                         <small class="">${category.productCount} artículos</small>
                         <table><tbody><tr>
@@ -61,6 +61,7 @@ function showCategoriesList(){
                          </tr>
                         </tbody></table>
                     </li>
+            </div>
             `
         }
 
