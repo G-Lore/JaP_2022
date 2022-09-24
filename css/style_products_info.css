@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+body {
+    background: linear-gradient(to right, #7cdeed78, #78d5946b);
+}
+
 .products_container {
     position: relative;
     width: 100em;
@@ -544,6 +548,10 @@
 }
 
 @media screen and (max-device-width: 430px) {
+    body {
+        background: none;
+    }
+
     .products_container {
         position: relative;
         width: 98%;
