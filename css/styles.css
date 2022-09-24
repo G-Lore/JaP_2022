@@ -526,6 +526,7 @@ a.custom-card:hover {
   width: calc(100% - 48px);
 }
 .opciones .userBx .nombre_usuario {
+  width: 100%;
   margin-left: 5px;
   margin-top: 15px;
   margin-right: 5px;
@@ -863,6 +864,7 @@ a.custom-card:hover {
  transition-delay: 0s, 0.75s;
  border-radius: 5px;
  background: none;
+ z-index: 1;
 }
 
 .opciones .userBx {
