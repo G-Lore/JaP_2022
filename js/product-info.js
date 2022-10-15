@@ -10,6 +10,11 @@ function setProductID(id) {
   window.location = "product-info.html"
 }
 
+function setProductCartID(carrito) {
+  localStorage.setItem("cart", JSON.stringify(currentProductsInfoArray));
+  window.location = "cart.html"
+}
+
 
 //Función para mostrar la indormación de cada uno de los productos
 function mostrar() {
@@ -34,7 +39,7 @@ function mostrar() {
       <tr><td class="category_soldCount">Categoría: ${currentProductsInfoArray.category}</td><tr>
       <tr><td class="category_soldCount">Cantidad vendidos: ${currentProductsInfoArray.soldCount}</td></tr>
     </tbody></table> 
-  <a href=""><i class="fas fa-shopping-cart"></i><span>_</span>Añadir al carrito</a>`;
+  <a onclick="setProductCartID(${currentProductsInfoArray.id})" class="add_cart"><i class="fas fa-shopping-cart"></i><span>_</span>Añadir al carrito</a>`;
   
   let similaryProducts = "";
 

@@ -8,7 +8,9 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styleCart.css">
   <link href="css/styles.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -41,21 +43,66 @@
               </div>
               <div class="menuToggle"></div>
               <ul class="menu">
-                <li><a href="#" id="mi_perfil"><i class="fas fa-user"></i>  Mi Perfil</a></li>
+                <li><a href="#" id="mi_perfil"><i class="fas fa-user"></i> Mi Perfil</a></li>
                 <li><a href="#" id="mi_carrito"><i class="fas fa-shopping-cart"></i>Mi Carrito</a></li>
-                <li><a href="#" id="cerrar_sesion"><i class="fas fa-sign-out-alt"></i>  Cerrar Sesión</a></li>
+                <li><a href="#" id="cerrar_sesion"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
               </ul>
             </div>
-            </li>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div id="products_cart">
       </div>
+      <table class="cont_envio">
+        <tr>
+          <th class="envio_th">
+            <h2><strong> Tipo de envío </strong></h2>
+          </th>
+        </tr>
+        <tr>
+          <td class="envio_td">
+            <input type="radio" id="premium">
+            <label for="premium">Premium 2 a 5 días (15%)</label>
+          </td>
+        </tr>
+        <tr>
+          <td class="envio_td">
+            <input type="radio" id="express">
+            <label for="express">Express 5 a 8 días (7%)</label>
+          </td>
+        </tr>
+        <tr>
+          <td class="envio_td">
+            <input type="radio" id="standard">
+            <label for="standard">Standard 12 a 15 días (5%)</label>
+          </td>
+        </tr>
+        <tr>
+          <th class="envio_th">
+            <h2><strong>Dirección de envío</strong></h2>
+          </th>
+        </tr>
+        <tr>
+        <td class="envio_td">
+        <input type="text" id="street" placeholder="Calle" class="envio_input">
+        <label for="street"></label>
+      </td>
+      <td class="envio_td">
+        <input type="text" id="number" placeholder="Número" class="envio_input">
+        <label for="number"></label>
+      </td>
+      <tr>
+        <td class="envio_td">
+          <input type="text" id="corner" placeholder="Esquina" class="envio_input"> 
+          <label for="corner"></label>
+        </td>
+      </tr>
+    </tr>
+      </table>
     </div>
   </main>
   <footer class="text-muted">

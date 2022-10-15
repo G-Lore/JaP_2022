@@ -483,14 +483,14 @@ a.custom-card:hover {
 }
 .listas img {
   width: 300px;
-
 }
 
 .opciones {
   position: absolute;
   top: 0;
   right: 10%;
-  width: 200px;
+  width: 250px;
+  /*width: 100px;*/
   height: 48px;
   background: transparent;
   box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
@@ -503,7 +503,7 @@ a.custom-card:hover {
 
 
 .opciones.active {
- width: 300px;
+ width: 320px;
  height: 300px;
  transition:  width  0.5s, height 0.5s;
  transition-delay: 0s, 0.75s;
@@ -517,17 +517,18 @@ a.custom-card:hover {
   width: 60px;
   height: 48px;
   background: transparent;
-  /*overflow: hidden;*/
+ /* overflow: hidden;*/
   display: flex;
   align-items: center;
+  width: calc(100% - 48px);
 }
 
 .opciones.active .userBx{
   width: calc(100% - 48px);
 }
 .opciones .userBx .nombre_usuario {
-  width: 100%;
-  margin-left: 5px;
+ 
+  margin-left: 15px;
   margin-top: 15px;
   margin-right: 5px;
   color: #48abe0;
@@ -636,7 +637,7 @@ a.custom-card:hover {
 }
 
 
-@media screen and (max-device-width: 430px) {
+@media screen and (max-device-width: 450px) {
   .footer {
     margin-left: 0;
     margin-right: 0;
@@ -844,7 +845,7 @@ a.custom-card:hover {
   position: relative;
   top: 0;
   right: 0;
-  width: 200px;
+  width: 280px;
   height: 48px;
   background: transparent;
   box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
@@ -858,7 +859,7 @@ a.custom-card:hover {
 
 
 .opciones.active {
- width: 300px;
+ width: 350px;
  height: 300px;
  transition:  width  0.5s, height 0.5s;
  transition-delay: 0s, 0.75s;
@@ -875,6 +876,7 @@ a.custom-card:hover {
   /*overflow: hidden;*/
   display: flex;
   align-items: center;
+  width: calc(100% - 48px);
 }
 
 .opciones.active .userBx{
