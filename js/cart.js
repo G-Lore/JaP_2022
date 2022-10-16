@@ -1,3 +1,14 @@
+const emptyCartTemplate = ` <div class="products_cart_emptyy">
+<div class="cont_gatito">
+<img class="gatito" src="./img/4500_7_02.jpg" alt="">
+<h1 class="empty_advertisement">Parece que tu carrito está vacío</h1>
+<h3 class="empty_advertisement_i">Agrega productos para que gatito esté feliz</h3>
+<h3 class="empty_advertisement_i">Haz click en el botón para ir a la tienda <i class="fas fa-store"></i></h3>
+<a href="index.html" class="volver_tienda">Volver a tienda <img src="./img/v987-11a.jpg" alt="" class="paw"></a>
+</div>
+</div>
+</div>`;
+
 
 // Cada vez que entramos aquí cargamos lo que hay en localStorage para asegurarnos de cargar todos
 // los elemento del carrito
@@ -9,47 +20,108 @@ function show_products_cart() {
 
     let addToCart = "";
 
-    for (let index = 0; index < currentCartArray.length; index++) {
+    if (currentCartArray.length > 0) {
+        
+      document.body.classList.remove("algo");
 
-        addToCart += `
+        for (let index = 0; index < currentCartArray.length; index++) {
+
+            addToCart += `
+            <tr id="${index}_item">
+                <td class="cart_td"><img class="cart_img" src="${currentCartArray[index].image}" width="150px"></td>
+                <td class="cart_td">${currentCartArray[index].name}</td>
+                <td class="cart_td">${currentCartArray[index].currency}${currentCartArray[index].unitCost}</td>
+                <td class="cart_td"><input type="number"  min="1" value="${currentCartArray[index].count}" id="${index}_qty" class="cart_input"></td>
+                <td class="cart_td" id="${index}_st">${currentCartArray[index].currency + " " + currentCartArray[index].unitCost * currentCartArray[index].count}</td>
+                <td><i onclick='remover("${index}_item")' class="fas fa-times"></i></td>
+            </tr>`
+        }
+    
+        document.getElementById('products_cart').innerHTML =
+         `<h1 class="title">Carrito de compras</h1> 
+          <h2 class="subtitle">Artículos a comprar</h2>
+            <table class="cont_cart" id="prodList"> 
+                <tbody>
+                    <tr>
+                        <th class="cart_th"></th>
+                        <th class="cart_th">Nombre</th>
+                        <th class="cart_th">Costo</th>
+                        <th class="cart_th">Cantidad</th>
+                        <th class="cart_th">Subtotal</th>
+                    </tr>
+    
+                    ${addToCart}
+    
+                </tbody>
+            </table>
+            <table class="cont_envio">
         <tr>
-            <td class="cart_td"><img class="cart_img" src="${currentCartArray[index].image}" width="150px"></td>
-            <td class="cart_td">${currentCartArray[index].name}</td>
-            <td class="cart_td">${currentCartArray[index].currency}${currentCartArray[index].unitCost}</td>
-            <td class="cart_td"><input type="number"  min="1" value="${currentCartArray[index].count}" id="${index}_qty" class="cart_input"></td>
-            <td class="cart_td" id="${index}_st">${currentCartArray[index].currency + " " + currentCartArray[index].unitCost * currentCartArray[index].count}</td>
-        </tr>`
-    }
-
-    document.getElementById('products_cart').innerHTML =
-     `<h1 class="title">Carrito de compras</h1> 
-      <h2 class="subtitle">Artículos a comprar</h2>
-        <table class="cont_cart" id="prodList"> 
-            <tbody>
-                <tr>
-                    <th class="cart_th"></th>
-                    <th class="cart_th">Nombre</th>
-                    <th class="cart_th">Costo</th>
-                    <th class="cart_th">Cantidad</th>
-                    <th class="cart_th">Subtotal</th>
-                </tr>
-
-                ${addToCart}
-
-            </tbody>
-        </table>`
+          <th class="envio_th">
+            <h2><strong> Tipo de envío </strong></h2>
+          </th>
+        </tr>
+        <tr>
+          <td class="envio_td">
+            <input type="radio" id="premium">
+            <label for="premium">Premium 2 a 5 días (15%)</label>
+          </td>
+        </tr>
+        <tr>
+          <td class="envio_td">
+            <input type="radio" id="express">
+            <label for="express">Express 5 a 8 días (7%)</label>
+          </td>
+        </tr>
+        <tr>
+          <td class="envio_td">
+            <input type="radio" id="standard">
+            <label for="standard">Standard 12 a 15 días (5%)</label>
+          </td>
+        </tr>
+        <tr>
+          <th class="envio_th">
+            <h2><strong>Dirección de envío</strong></h2>
+          </th>
+        </tr>
+        <tr>
+        <td class="envio_td">
+        <input type="text" id="street" placeholder="Calle" class="envio_input">
+        <label for="street"></label>
+      </td>
+      <td class="envio_td">
+        <input type="text" id="number" placeholder="Número" class="envio_input">
+        <label for="number"></label>
+      </td>
+      <tr>
+        <td class="envio_td">
+          <input type="text" id="corner" placeholder="Esquina" class="envio_input"> 
+          <label for="corner"></label>
+        </td>
+      </tr>
+    </tr>
+      </table>
+      `
+    } else {
+        document.getElementById('products_cart').innerHTML = emptyCartTemplate;
+      
+    } 
+    
 }
 
-// Creamos un EventListener que detecta cambios, entonces cuando detecta un cambio ejecuta 
-//
+// Creamos un EventListener que detecta cambios, entonces cuando detecta un cambio determinamos usando
+// expresiones regulares y método match en el string que proviene del id de donde se produjo el evento change,
+// lo que hacemos es verificar que el id sea _qty y no cualquier otro, dado que como vamos a modificar el array
+// de los productos tenemos que estar seguros de que el cambio provenga de donde tiene que venir.
 document.addEventListener('change', function (event) {
 
-    if (event.target.valueAsNumber >= 1 ) {
-        let indx = event.target.id.charAt(0);
+    if ( event.target.id.match(/_qty/g)[0] != null || event.target.id.match(/_qty/g)[0] === '_qty' ) {
+
+        let match = event.target.id.match(/(\d+)/);
+        let indx = match[0];
         let st = indx + "_st";
 
         // Guardo la cantidad en localStorage
-        currentCartArray[indx].count++;
+        currentCartArray[indx].count = event.target.valueAsNumber;
         localStorage.setItem("cart", JSON.stringify(currentCartArray));
 
         let subtotal = currentCartArray[indx].currency + " " + currentCartArray[indx].unitCost * event.target.valueAsNumber;
@@ -64,6 +136,30 @@ document.addEventListener("DOMContentLoaded", function () {
     show_products_cart()
     
 });
+
+function remover(id_llamado) {
+    console.log(id_llamado);
+    let match = id_llamado.match(/(\d+)/);
+    let indx = match[0];
+
+    currentCartArray.splice(indx, 1);
+
+    localStorage.setItem("cart", JSON.stringify(currentCartArray));
+
+    var elem = document.getElementById(id_llamado);
+    elem.parentNode.removeChild(elem);
+
+    if(currentCartArray.length === 0) {
+        var elem = document.getElementById('products_cart');
+    elem.parentNode.removeChild(elem);
+
+        document.body.classList.add("algo");
+
+        document.getElementById('products_cart_empty').innerHTML = emptyCartTemplate;
+        
+    }    
+    console.log(currentCartArray)
+}
 
 // Se muestra el nombre de ususario, obteniendo este desde localStorage con localStorage.getItem ('user'(key del usuario))
 // y luego lo muestro con innerHTML en la barra de navegación, obreniendo previamente, el id 'person' 

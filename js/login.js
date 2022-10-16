@@ -19,7 +19,8 @@ function login (){
           })
     }else {
         localStorage.setItem('user', usuario);
-        location.href='index.html';
+        window.location='index.html';
+
     }
 }
 
@@ -29,3 +30,5 @@ document.addEventListener('DOMContentLoaded',()=>{
       })
 
 }) 
+
+

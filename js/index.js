@@ -61,3 +61,4 @@ let opciones = document.querySelector('.opciones');
 menuToggle.onclick = function(){
     opciones.classList.toggle('active')
 }
+
