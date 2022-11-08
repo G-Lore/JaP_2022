@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 document.getElementById("cerrar_sesion").addEventListener("click", cerrar);
 
 function cerrar() {
-   localStorage.removeItem('user');
+   localStorage.clear();
    window.location.replace("login.html");
   }
 
