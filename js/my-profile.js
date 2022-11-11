@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let nombre_usuario = localStorage.getItem('user');
 
     document.getElementById('person').innerHTML = nombre_usuario;
+    document.getElementById('email_perfil').innerHTML = nombre_usuario;
 
 })
+
 
 document.getElementById("cerrar_sesion").addEventListener("click", cerrar);
 
