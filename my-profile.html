@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/myProfile.css">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -68,22 +69,70 @@
   </nav>
   <main>
     <div class="container">
-      <div class="row ">
-        <h1>Perfil</h1>
-        <label for="primer_nombre">Primer nombre*</label>
-        <input type="text" placeholder="escribe un nombre" id="primer_nombre" class="col-6">
-        <label for="segundo_nombre">Segundo nombre</label>
-        <input type="text" placeholder="escribe otro nombre" id="segundo_nombre" class="col-6 ">
-        <label for="primer_apellido">Primer apellido*</label>
-        <input type="text" placeholder="escribe un apellido" id="primer_apellido" class="col-6">
-        <label for="segundo_apellido">Segundo apellido</label>
-        <input type="text" placeholder="escribe otro apellido" id="segundo_apellido" class="col-6">
-        <label for="email_perfil">E-mail</label>
-        <input type="email" placeholder="escribe un email" id="email_perfil" class="col-6">
-        <label for="telefono_contacto">Teléfono de contacto*</label>
-        <input type="text" placeholder="inserta un teléfono" id="telefono_contacto" class="col-6">
-
-      </div>
+      <form class="row g-3 needs-validation" novalidate>
+      <table class="tabla_de_perfil" id="tdp">
+        <tbody>
+          <tr>
+            <th colspan="2">
+              <h1>Perfil</h1>
+              <hr>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <label for="primer_nombre" class="form-label">Primer nombre*</label>
+              <input type="text" class="form-control perfil_control" placeholder="escribe un nombre" id="primer_nombre" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </td>
+            <td>
+              <label for="segundo_nombre" class="form-label">Segundo nombre</label>
+              <input type="text" class="form-control perfil_control" placeholder="escribe otro nombre" id="segundo_nombre">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="primer_apellido" class="form-label">Primer apellido*</label>
+              <input type="text" class="form-control perfil_control" placeholder="escribe un apellido" id="primer_apellido" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </td>
+            <td>
+              <label for="segundo_apellido" class="form-label">Segundo apellido</label>
+              <input type="text" class="form-control perfil_control" placeholder="escribe otro apellido" id="segundo_apellido">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="email_perfil" class="form-label">E-mail</label>
+              <input type="email" class="form-control perfil_control" placeholder="escribe un email" id="email_perfil" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </td>
+            <td>
+              <label for="telefono_contacto" class="form-label">Teléfono de contacto*</label>
+              <input type="text" class="form-control perfil_control" placeholder="inserta un teléfono" id="telefono_contacto">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr class="hr_boton">
+      <button onclick="modifyProfile()" type="submit" class="btn btn-primary boton_perfil">Guardar Cambios</button>
+      </form>
+    </div>
+    </div>
     </div>
     </div>
   </main>

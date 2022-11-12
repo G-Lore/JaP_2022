@@ -1,0 +1,25 @@
+.tabla_de_perfil {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+}
+.tabla_de_perfil hr {
+    width: 49.9em;
+    margin-top: 3em;
+    height: 0.1px;
+}
+.perfil_control {
+    width: 90%;
+}
+
+.boton_perfil {
+    margin-top: 2em;
+    margin-left: 14em;
+}
+
+.hr_boton {
+    margin-top: 6em;
+    width: 49.9em;
+    margin-left: 14em;
+}

@@ -16,7 +16,6 @@ let cartChekOut = {
   carrito_envio_ratio: 0,
   carrito_total: 0,
   carrito_metodo_pago: "ninguno",
-  
 };
 
 // Cada vez que entramos aquí cargamos lo que hay en localStorage para asegurarnos de cargar todos

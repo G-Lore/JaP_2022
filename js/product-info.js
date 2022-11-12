@@ -348,7 +348,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
   document.getElementById('person').innerHTML = nombre_usuario;
 
 })
-
 // Para cerrar seción se obtiene el id "cerrar_sesion" de una etiqueta HTML <li></li>.
 // Posteriormente con un eventListener "click" sobre el id previamente obtenido se crea una fiunción cerrar() 
 // donde se remueve la key 'user' con localStorage.removeItem y luego con window.location.remplace volvemos a 
@@ -359,8 +358,6 @@ function cerrar() {
    localStorage.clear();
    window.location.replace("login.html");
   }
-
-
 // Para ir a "mi perfil" se obtiene el id "mi_perfil" de una etiqueta HTML <li></li>.
 // Posteriormente con un eventListener "click" sobre el id previamente obtenido se crea una fiunción miPerfil() 
 // donde con window.location.remplace redirigiremos al usuario a la página "my-profile.html".
@@ -378,7 +375,6 @@ document.getElementById("mi_carrito").addEventListener('click', miCarrito);
 function miCarrito() {
     window.location.replace("cart.html");
 }
-
 // Funcionalidades para seleccionar los elemento del menú que creamos para el usuario
 // el mismo es un menú que se desplega hacia abajo mostrandonos en primera instancia el nombre del usuario
 // y luego al hacer click cobre éste se nos muestra las opciones "Mi perfil" "Mi carrito" y "Cerrar sesión"
