@@ -103,7 +103,7 @@ function show_products_cart() {
                 <td class="cart_td">${currentCartArray[index].name}</td>
                 <td class="cart_td">${currentCartArray[index].currency}${currentCartArray[index].unitCost}</td>
                 <td class="cart_td"><input type="number"  min="1" value="${currentCartArray[index].count}" id="${index}_qty" class="cart_input"></td>
-                <td class="cart_td" id="${index}_st">${currentCartArray[index].currency + " " + currentCartArray[index].unitCost * currentCartArray[index].count}</td>
+                <td class="cart_td" id="${index}_st">${currentCartArray[index].currency + currentCartArray[index].unitCost * currentCartArray[index].count}</td>
                 <td><i onclick='remover("${currentCartArray[index].id}_item")' class="fas fa-times"></i></td>
             </tr>`
         }
@@ -170,7 +170,7 @@ function show_products_cart() {
         <td class="envio_td">
         <input type="text" id="validationCustom01" placeholder="Calle" class="form-control envio_input" required>
         <label for="validationCustom01" class="form-label"></label>
-          <div class="invalid-feedback">
+          <div class="invalid-feedback parrafo_invalido">
               Por favor, escriba una calle.
             </div>
           <div class="valid-feedback">
@@ -178,9 +178,9 @@ function show_products_cart() {
             </div>
       </td>
       <td class="envio_td">
-        <input type="text" id="validationCustom02" placeholder="Número" class="form-control envio_input" required>
+        <input type="text" id="validationCustom02" placeholder="Número" class="form-control envio_input envio_input_numero" required>
         <label for="validationCustom02" class="form-label"></label>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback parrafo_invalido">
               Por favor, escriba un número de puerta. 
             </div>
         <div class="valid-feedback">
@@ -191,7 +191,7 @@ function show_products_cart() {
         <td class="envio_td">
           <input type="text" id="validationCustom03" placeholder="Esquina" class="form-control envio_input" required> 
           <label for="validationCustom03" class="form-label"></label>
-          <div class="invalid-feedback">
+          <div class="invalid-feedback parrafo_invalido">
               Por favor, escriba una esquina.
             </div>
           <div class="valid-feedback">
@@ -210,7 +210,7 @@ function show_products_cart() {
            <p>Costo unitario del producto por cantidad</p>
         </td>
         <td class="costos_td">
-          <h4 class="float-end me-4" id="cost_subtotal">USD ${cartChekOut.carrito_subtotal}<h4>
+          <h4 class="float-end me-4 costos_subTotales_uno" id="cost_subtotal">USD ${cartChekOut.carrito_subtotal}<h4>
         </td>
     </tr>
     <tr class="costos">
@@ -219,7 +219,7 @@ function show_products_cart() {
        <p>Según el tipo de envío</p>
     </td>
     <td class="costos_td">
-      <h4 class="float-end me-4" id="cost_envio">USD ${cartChekOut.carrito_costo_envio}</h4>
+      <h4 class="float-end me-4 costos_subTotales_dos" id="cost_envio">USD ${cartChekOut.carrito_costo_envio}</h4>
     </td>
     </tr>
     <tr class="costos">
@@ -227,7 +227,7 @@ function show_products_cart() {
         <h4>Total</h4>
       </td>
       <td class="costos_td">
-        <h4 class="float-end me-4" id="total">USD ${cartChekOut.carrito_total}<h4>
+        <h4 class="float-end me-4 costos_subTotales_tres" id="total">USD ${cartChekOut.carrito_total}<h4>
       </td>
 </tr>
 <tr>
