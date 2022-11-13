@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let nombre_usuario = localStorage.getItem('user');
 
     document.getElementById('person').innerHTML = nombre_usuario;
-
+    loadImageProfile();
 })
 
 document.getElementById("cerrar_sesion").addEventListener("click", cerrar);

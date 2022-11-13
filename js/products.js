@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
             //sortAndShowProducts(ORDER_ASC_BY_PRICE, resultObj.data.products);
         }
+        loadImageProfile();
     });
 
     document.getElementById("sortAsc").addEventListener("click", function(){

@@ -546,13 +546,9 @@ a.custom-card:hover {
   border: 2px solid #fff;
   
 }
-
-
 .opciones .userBx .imgBx img{
   position: absolute;
-  top: 5.5px;
-  left: 5px;
-  width: 80%;
+  width: 100%;
   object-fit: cover;
 }
 

@@ -413,6 +413,7 @@ document.addEventListener('change', function (event) {
 document.addEventListener("DOMContentLoaded", function () {
     calcularCostos();
     show_products_cart();
+    loadImageProfile();
 });
 
 function remover(id_llamado) {

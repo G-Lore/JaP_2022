@@ -61,3 +61,10 @@ if ( !(localStorage.hasOwnProperty("cart")) ) {
 } else {
   console.log("Ya existe elementos del carrito en localStorage");
 }
+
+function loadImageProfile() {
+  if (localStorage.getItem('profile') !== null) {
+    datosDelPerfil = JSON.parse(localStorage.getItem('profile'));
+    document.getElementById("userImageProfile").src=datosDelPerfil.fotoDePerfil;
+  }
+}

@@ -6,11 +6,44 @@ let datosDelPerfil = {
   segundo_apellido: "",
   email: "",
   telefono_de_contacto: "",
+  fotoDePerfil: "",
 };
+
+const inputProfilePhoto = document.getElementById("inputProfilePhoto");
+
+const convertBase64 = (file) => {
+  return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+          resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+          reject(error);
+      };
+  });
+};
+
+const uploadImage = async (event) => {
+  const file = event.target.files[0];
+  const base64 = await convertBase64(file);
+  datosDelPerfil.fotoDePerfil = base64;
+
+  document.getElementById("tableBanner").src=datosDelPerfil.fotoDePerfil;
+};
+
+inputProfilePhoto.addEventListener("change", uploadImage, false);
+
 
 
 if (localStorage.getItem('profile') !== null) {
    datosDelPerfil = JSON.parse(localStorage.getItem('profile'));
+   document.getElementById("tableBanner").src=datosDelPerfil.fotoDePerfil;
+   document.getElementById("userImageProfile").src=datosDelPerfil.fotoDePerfil;
+   document.getElementById('userProfileName').innerHTML = datosDelPerfil.nombre;
+   document.getElementById('userProfileLastname').innerHTML = datosDelPerfil.apellido;
 }else {
   datosDelPerfil.email = localStorage.getItem('user');
 }
@@ -51,6 +84,8 @@ function modifyProfile() {
   })
 })()
 
+
+
 // Se muestra el nombre de ususario, obteniendo este desde localStorage con localStorage.getItem ('user'(key del usuario))
 // y luego lo muestro con innerHTML en la barra de navegación, obreniendo previamente, el id 'person' 
 // que pertenece a una etiqueta HTML <p></p> donde se va a mostrar el nombre del usuario.  
@@ -59,6 +94,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let nombre_usuario = localStorage.getItem('user');
 
     document.getElementById('person').innerHTML = nombre_usuario;
+    document.getElementById('userProfileEmail').innerHTML = nombre_usuario 
 })
 // Para cerrar seción se obtiene el id "cerrar_sesion" de una etiqueta HTML <li></li>.
 // Posteriormente con un eventListener "click" sobre el id previamente obtenido se crea una fiunción cerrar() 

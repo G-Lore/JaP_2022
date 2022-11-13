@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
 
         updateTotalCosts();
+        loadImageProfile();
     });
 
 
